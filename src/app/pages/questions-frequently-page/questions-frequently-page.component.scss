@@ -1,0 +1,88 @@
+h1 {
+    margin-top: 50px;
+    font-size: 48px; /* Tamaño de letra aumentado */
+    text-align: center;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    font-family: "Arial Black", sans-serif; /* Tipo de letra más profesional */
+}
+
+.header-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: transparent; /* Fondo transparente */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    padding: 20px; /* Agrega un espacio interno para separar el contenido de las preguntas */
+    border-radius: 10px; /* Agrega bordes redondeados a las preguntas */
+}
+
+.faq-question {
+    font-weight: bold;
+    color: #000; /* Texto negro */
+    font-size: 24px; /* Tamaño de letra aumentado */
+}
+
+.faq-answer {
+    margin-top: 10px;
+    color: #000; /* Texto negro */
+    font-size: 20px; /* Tamaño de letra aumentado */
+}
+
+.download-button {
+    padding: 10px 20px;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Tamaño de letra aumentado */
+    border: 2px solid #000; /* Borde negro */
+}
+
+.download-button:hover {
+    background-color: #000; /* Fondo negro al pasar el cursor */
+    color: #fff; /* Texto blanco al pasar el cursor */
+}
+
+.footerDiv {
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+    width: 98%;
+    position: relative; /* Cambiado de fixed a relative para que no cubra el contenido */
+}
+
+.footer-image {
+    max-width: 200px; /* Tamaño máximo de la imagen del footer */
+}
+
+.contact-info {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.whatsapp-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.whatsapp-link {
+    color: #25d366;
+    text-decoration: none;
+}

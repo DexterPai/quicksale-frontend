@@ -1,0 +1,33 @@
+<div style="width: 95% !important; margin: auto">
+	<app-carousel></app-carousel>
+</div>
+
+<br />
+<form class="content flex-column" autocomplete="off" [formGroup]="formGroup">
+	<div class="filter">
+		<mat-form-field appearance="outline">
+			<mat-label>Categoría</mat-label>
+			<mat-select formControlName="dcbCategory" (selectionChange)="applyFilter()">
+				<mat-option [value]="0">Seleccion</mat-option>
+				<mat-option *ngFor="let category of listCategory" [value]="category.idCategory">{{
+					category.description
+				}}</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<h4>Selecciona tu categoría favorita</h4>
+	</div>
+	<div class="cards">
+		<!--
+				<app-card-event
+					*ngFor="let concerts of listConcerts"
+					[event]="concerts"
+					(clickCard)="clickCard($event)"
+				></app-card-event>
+				-->
+		<app-card-event
+			*ngFor="let concerts of listEvents"
+			[event]="concerts"
+			(clickCard)="clickCard($event)"
+		></app-card-event>
+	</div>
+</form>

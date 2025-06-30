@@ -1,0 +1,36 @@
+# Angular build
+/dist/
+/out-tsc/
+/coverage/
+/.angular/cache/
+
+# Angular workspace (raíz)
+/.angular/
+
+# Husky (ganchos de Git)
+/.husky/
+
+# Node
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# IDEs
+/.idea/
+/.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test Reports
+/testem.log
+/karma-coverage/
+
+# Otros
+.sass-cache/
+/connect.lock
+/libpeerconnection.log
+*.swp
+*.tmp
+*.bak

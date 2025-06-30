@@ -1,0 +1,102 @@
+<h4>Compra tus entradas y disfruta!</h4>
+<div class="container" [ngSwitch]="statusBuy">
+	<app-card-event></app-card-event>
+	<mat-card *ngSwitchDefault class="container__card custom-card flex-column">
+		<mat-card-content class="card-content flex-column">
+			<div class="containerDetails" *ngIf="detailsEvent">
+				<div class="contenido">
+					<div>
+						<span class="titleDetails"> {{ detailsEvent.title }} </span><br /><br /><br />
+						<span> {{ detailsEvent.event.description }} </span>
+						<br /><br />
+						<span> {{ detailsEvent.description }} </span>
+					</div>
+
+					<div class="price">
+						<div class="price__value">
+							<span>Precio:</span>
+							<span>{{ detailsEvent.event.unitPrice | customCurrency : '.2-3' }}</span>
+						</div>
+						<button mat-raised-button color="accent" (click)="clickBuy('BUY')">COMPRAR ENTRADA</button>
+					</div>
+					<br /><br />
+					<div class="price__coment">
+						<span>Comentario:</span>
+					</div>
+					<span> {{ detailsEvent.comments }} </span>
+				</div>
+				<div class="sidebar">
+					<img class="card-content_img" src="{{ detailsEvent.urlImageRef }}" />
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+
+	<mat-card *ngSwitchCase="'BUY'" class="container__card-buy custom-card flex-column">
+		<form autocomplete="off" [formGroup]="formGroup">
+			<mat-card-content *ngIf="detailsEvent" class="container-card-buy-content flex-column">
+				<div class="header">
+					<span class="title">{{ detailsEvent.event.title }}</span>
+					<div class="header__price">
+						<span>PRECIO:</span>
+						<span>{{ detailsEvent.event.unitPrice | customCurrency : '.3-4' }}</span>
+					</div>
+				</div>
+				<div>
+					<mat-form-field appearance="outline">
+						<mat-label>Cantidad de tickets</mat-label>
+						<input
+							matInput
+							formControlName="quantity"
+							type="number"
+							value="1"
+							autocomplete="off"
+							min="1"
+							(keyup)="calculeTotal($event)"
+						/>
+					</mat-form-field>
+					<br />
+					<mat-form-field appearance="outline">
+						<mat-label>Tipo pago</mat-label>
+						<mat-select formControlName="dcbPayment">
+							<mat-option *ngFor="let payment of listPayments" [value]="payment.idPayment">{{
+								payment.name
+							}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+					<h3>Total: {{ totalPriceDinamic | customCurrency : '.3-4' }}</h3>
+				</div>
+				<button mat-raised-button color="accent" (click)="clickSave()">PAGAR</button>
+			</mat-card-content>
+		</form>
+	</mat-card>
+
+	<mat-card *ngSwitchCase="'VOUCHER'" class="card-buy-total custom-card flex-column">
+		<mat-card-content *ngIf="saleResponse" class="card-buy-total">
+			<div>
+				<span class="title">VOUCHER - {{ currentDate | date : 'shortDate' }}</span>
+				<div class="card-buy-total__item flex-column">
+					<span>Nro. Operacion</span>
+					<span>{{ saleResponse.operationNumber }}</span>
+				</div>
+				<div class="card-buy-total__item flex-column">
+					<span>Cliente</span>
+					<span>{{ saleResponse.customer.fullName }}</span>
+				</div>
+				<div class="card-buy-total__item flex-column">
+					<span>Nro. Tickets</span>
+					<span>{{ saleResponse.quantity }}</span>
+				</div>
+				<div class="card-buy-total__item flex-column">
+					<span>Fecha de Pago</span>
+					<span>{{ currentDate | date : 'dd/MM/yyyy' }}</span>
+				</div>
+			</div>
+			<br />
+			<div class="card-buy-total__total">
+				<h3>TOTAL:</h3>
+				<h3>{{ saleResponse.total | customCurrency : '.3-4' }}</h3>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</div>

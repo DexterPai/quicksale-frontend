@@ -1,0 +1,64 @@
+@use '../../styles/colors.scss';
+.card {
+	width: 330px;
+	height: 400px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	border-radius: 15px;
+
+	.card-content {
+		display: flex;
+		flex: 1;
+		border-radius: 15px;
+
+		&__header {
+			margin-bottom: 10px;
+
+			.genre {
+				text-align: right;
+			}
+
+			.title {
+				color: colors.$primary-color;
+				font-size: 14px;
+			}
+
+			.subtitle {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 5px;
+				font-size: 16px;
+
+				&__hour {
+					color: colors.$accent-color;
+				}
+			}
+		}
+
+		&__img {
+			height: 100%;
+			background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			margin: -16px -16px 16px -16px;
+			border-radius: 15px 15px 0px 0px;
+		}
+
+		&__content {
+			justify-content: space-between;
+			text-align: left;
+			gap: 5px;
+
+			.location {
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&--selected {
+		box-shadow: 0px 4px 16px 2px rgb(227 30 99);
+	}
+}

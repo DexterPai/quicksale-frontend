@@ -1,0 +1,141 @@
+@use '../../commons/styles/colors.scss';
+::ng-deep {
+	.mat-select-value-text {
+		color: white;
+	}
+	.mat-mdc-select-value-text {
+		color: white;
+	}
+}
+
+.title {
+	color: colors.$primary-color;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.titleDetails {
+	color: colors.$primary-color;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.containerDetails {
+	width: 90%;
+	display: grid;
+	grid-gap: 20px;
+	justify-content: space-between;
+	grid-template-areas: 'contenido contenido sidebar';
+}
+
+.containerDetails .sidebar {
+	text-align: right;
+	display: flex;
+	align-items: flex-end;
+	justify-content: right;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.containerDetails .contenido {
+	grid-area: contenido;
+}
+
+@media screen and (max-width: 768px) {
+	.containerDetails {
+		grid-template-areas:
+			'contenido contenido contenido'
+			'sidebar sidebar sidebar';
+	}
+}
+
+.card-content_img {
+}
+
+.container {
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+	&__card {
+		width: 100%;
+		color: white;
+		justify-content: space-between;
+
+		.price {
+			display: flex;
+			gap: 1em;
+			align-items: center;
+			&__value {
+				font-weight: bold;
+				font-size: 18px;
+
+				:nth-child(2) {
+					color: colors.$accent-color;
+					padding-left: 5px;
+				}
+			}
+
+			&__coment {
+				font-weight: bold;
+				font-size: 18px;
+				text-decoration: underline;
+				margin-bottom: 3px;
+			}
+		}
+	}
+
+	&__card-buy {
+		@extend .card_buy;
+		justify-content: space-between;
+		h3 {
+			color: white;
+		}
+		.header {
+			.title {
+				text-transform: uppercase;
+			}
+
+			&__price {
+				padding-top: 10px;
+				padding-bottom: 15px;
+
+				:nth-child(2) {
+					color: colors.$accent-color;
+					padding-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+.card-buy-total {
+	@extend .card_buy;
+	justify-content: space-between;
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		padding-top: 10px;
+		:nth-child(1) {
+			color: colors.$primary-color;
+		}
+	}
+
+	&__total {
+		display: flex;
+		gap: 1em;
+		:nth-child(1) {
+			color: colors.$primary-color;
+		}
+		:nth-child(2) {
+			color: colors.$accent-color;
+		}
+	}
+}
+
+.card_buy {
+	width: 250px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}

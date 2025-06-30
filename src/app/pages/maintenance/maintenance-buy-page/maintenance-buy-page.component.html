@@ -1,0 +1,68 @@
+<div>
+	<h2>Ventas</h2>
+	<div class="content flex-column">
+		<form class="content flex-column" autocomplete="off" [formGroup]="formGroup">
+			<div class="content__filter">
+				<mat-form-field appearance="outline">
+					<mat-label>Fecha de inicio</mat-label>
+					<input matInput [matDatepicker]="pickerInit" formControlName="dateIni" />
+					<mat-datepicker-toggle matSuffix [for]="pickerInit"></mat-datepicker-toggle>
+					<mat-datepicker #pickerInit></mat-datepicker>
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>Fecha fin</mat-label>
+					<input matInput [matDatepicker]="pickerFin" formControlName="dateFin" />
+					<mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+					<mat-datepicker #pickerFin></mat-datepicker>
+				</mat-form-field>
+			</div>
+
+			<div>
+				<button type="button" mat-raised-button color="primary" (click)="applyFilter()">CONSULTAR</button>
+				<button mat-raised-button color="accent" style="margin-left: 10px" (click)="clearFilters()">LIMPIAR</button>
+			</div>
+
+			<div class="mat-elevation-z8">
+				<table #table mat-table [dataSource]="dataSource">
+					<ng-container matColumnDef="operationNumber">
+						<th mat-header-cell *matHeaderCellDef>Nro. transacción</th>
+						<td mat-cell *matCellDef="let element">{{ element.operationNumber }}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="saleDate">
+						<th mat-header-cell *matHeaderCellDef>Fecha de compra</th>
+						<td mat-cell *matCellDef="let element">{{ element.saleDate }}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="total">
+						<th mat-header-cell *matHeaderCellDef>Total</th>
+						<td mat-cell *matCellDef="let element">{{ element.total }}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="quantity">
+						<th mat-header-cell *matHeaderCellDef>Nro. entradas</th>
+						<td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="status">
+						<th mat-header-cell *matHeaderCellDef>Estado</th>
+						<td mat-cell *matCellDef="let element">{{ element.status }}</td>
+					</ng-container>
+
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+					<tr class="mat-row" *matNoDataRow></tr>
+				</table>
+				<mat-paginator
+					#paginator
+					[pageSizeOptions]="pageSizeOptions"
+					(page)="getPaginatorData()"
+					aria-label="Select page"
+				>
+				</mat-paginator>
+			</div>
+		</form>
+	</div>
+</div>
