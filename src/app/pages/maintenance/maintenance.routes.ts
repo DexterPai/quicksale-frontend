@@ -30,13 +30,6 @@ export const routes: Routes = [
 				title: 'Categoria',
 				loadComponent: () => import('./maintenance-category-page/maintenance-category-page.component')
 			},
-			/*
-			{
-				path: PATH_MAINTENANCE_PAGES.genres.onlyPath,
-				title: 'Generos',
-				loadComponent: () => import('./maintenance-genres-page/maintenance-genres-page.component')
-			},
-			*/
 			{
 				path: PATH_MAINTENANCE_PAGES.reports.onlyPath,
 				title: 'Reporte de ventas',

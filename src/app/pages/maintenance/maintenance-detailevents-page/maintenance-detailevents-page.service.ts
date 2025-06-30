@@ -81,8 +81,6 @@ export class MaintenanceDetaileventsPageService {
 					})
 					.concat(newArray);
 			}
-			// si quisieran ordenar los eventos de manera decendente por id, podemos usar la función sort
-			// newArray = newArray.sort((a, b) => b.id - a.id);
 			return newArray;
 		}
 
@@ -160,7 +158,6 @@ export class MaintenanceDetaileventsPageService {
 			urlImageRef: ['', Validators.required],
 			event: this._formBuilder.control<number | null>(null),
 			status: [0, Validators.required]
-			//fileName: ['', Validators.required]
 		});
 	}
 

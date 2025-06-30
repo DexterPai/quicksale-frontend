@@ -8,10 +8,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { ConfirmBoxEvokeService } from '@costlydeveloper/ngx-awesome-popup';
 import { map, Observable } from 'rxjs';
-//import { IResponseConcert } from '../../../commons/services/api/concerts/concert-api-model.interface';
-//import { ConcertApiService } from '../../../commons/services/api/concerts/concert-api.service';
-//import { IResponseGenre } from '../../../commons/services/api/genre/genre-api-model.interface';
-//import { GenreApiService } from '../../../commons/services/api/genre/genre-api.service';
 import { SharedFormCompleteModule } from '../../../commons/shared/shared-form-complete.module';
 import { CRUD_METHOD } from '../../../commons/utils/enums';
 import { MaintenanceEventsPageService } from './maintenance-events-page.service';
@@ -69,22 +65,13 @@ export default class MaintenanceEventsPageComponent implements OnInit, AfterView
 	titleField = this._maintenanceEventsPageService.titleField;
 	descriptionField = this._maintenanceEventsPageService.descriptionField;
 	dateField = this._maintenanceEventsPageService.dateField;
-	//hourField = this._maintenanceEventsPageService.hourField;
 	ticketsQuantityField = this._maintenanceEventsPageService.ticketsQuantityField;
 	priceField = this._maintenanceEventsPageService.priceField;
 	placeField = this._maintenanceEventsPageService.placeField;
 	genreField = this._maintenanceEventsPageService.genreField;
 	statusField = this._maintenanceEventsPageService.statusField;
 	imageField = this._maintenanceEventsPageService.imageField;
-	//fileNameField = this._maintenanceEventsPageService.fileNameField;
 	//#region
-
-	// constructor(
-	// 	private _genreApiService: GenreApiService,
-	// 	private _maintenanceEventsPageService: MaintenanceEventsPageService,
-	// 	private _eventApiService: ConcertApiService,
-	// 	private _confirmBoxEvokeService: ConfirmBoxEvokeService
-	// ) {}
 
 	formGroup = this._maintenanceEventsPageService.formGroup;
 

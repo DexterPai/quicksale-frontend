@@ -22,7 +22,6 @@ export class LoginPageComponent implements OnInit {
 	private _userApiService = inject(UserApiService);
 	private _sessionStorageService = inject(SessionStorageService);
 	private _localStorageService = inject(LocalStorageService);
-	//constructor(private _Router: Router, private _channelHeaderService: ChannelHeaderService) {}
 
 	title = 'INICIO DE SESIÓN';
 	readonly pathRecovery = PATHS_AUTH_PAGES.recoverPasswordPage.withSlash;
@@ -42,17 +41,6 @@ export class LoginPageComponent implements OnInit {
 	clickLogin(): void {
 		if (this.formGroup.valid) {
 			const { email, password } = this.formGroup.getRawValue();
-			/*
-			this._userApiService.login({ userName: email, password }).subscribe({
-				next: (response) => {
-					this._saveDataUserAndRedirect(response);
-					console.log(response);
-				},
-				error: () => {
-					//console.log('dasda');
-					this.disabledButton = false;
-				}
-			});*/
 
 			this._userApiService.loginv2({ email, password }).subscribe({
 				next: (response) => {
@@ -64,13 +52,6 @@ export class LoginPageComponent implements OnInit {
 				}
 			});
 		}
-		//OBTENER EL VALOR DE UN COMPONENTE
-		//console.log(this.formGroup.controls.email.value);
-
-		//VALIDACIONES SI ES VALIDO EL FORMULARIO
-		//console.log(this.formGroup.invalid);
-		//console.log(this.formGroup.pending);
-		//console.log(this.formGroup.disabled);
 	}
 
 	private _saveDataUserAndRedirectv2(response: IResponseLoginv2): void {

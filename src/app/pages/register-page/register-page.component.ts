@@ -115,12 +115,6 @@ export default class RegisterPageComponent implements OnInit {
 		return this.formGroup.controls.lastName;
 	}
 
-	/*
-	get typeDocumentField(): FormControl<string | null> {
-		return this.formGroup.controls.typeDocument;
-	}
-	*/
-
 	get documentNumberField(): FormControl<string> {
 		return this.formGroup.controls.documentNumber;
 	}

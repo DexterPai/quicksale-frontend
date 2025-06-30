@@ -1,15 +1,13 @@
 export const environment = {
   firebase: {
-    projectId: 'angularquicksale',
-    appId: '1:234166409852:web:1325a7f349d4692aae47f9',
-    storageBucket: 'angularquicksale.appspot.com',
-    locationId: 'southamerica-east1',
-    apiKey: 'AIzaSyDu4mj-GzkTb8EUP80g4PuiTp0I7kaj4rY',
-    authDomain: 'angularquicksale.firebaseapp.com',
-    messagingSenderId: '234166409852',
-    measurementId: 'G-G9SEB7JBZW',
+    projectId: 'quicksale-dev',
+    appId: '1:438610308770:web:9a5680a492857641fdf1fb',
+    storageBucket: 'quicksale-dev.firebasestorage.app',
+    apiKey: 'AIzaSyBsLKOYG5LLslCp0Nrm_3doWo5iM7NxZZA',
+    authDomain: 'quicksale-dev.firebaseapp.com',
+    messagingSenderId: '438610308770',
+    measurementId: 'G-JEQ0DSJMXM',
   },
     production: false,
-    //host:'http://localhost:8080/api'
-    host:'https://api-quicksale-ci-a4801eee611d.herokuapp.com/api'
+    host:'http://localhost:8080/api'
   };  

@@ -68,7 +68,6 @@ export default class BuyPageComponent {
 	private _captureData(): void {
 		// capturamos los datos del evento seleccionado enviados por la opción "state"
 		const navigation = this._router.getCurrentNavigation();
-		//console.log(navigation?.extras?.state);
 
 		if (navigation?.extras?.state && navigation.extras.state['event']) {
 			this.cardEvent = navigation.extras.state['event'] as ICardEvent;

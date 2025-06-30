@@ -27,7 +27,6 @@ export default class MaintenanceBuyPageComponent implements OnInit, AfterViewIni
 	private _maintenanceSalePageService = inject(MaintenanceBuyPageService);
 
 	@ViewChild('paginator') paginator: MatPaginator | undefined;
-	//@ViewChild(FormGroupDirective) formRef!: FormGroupDirective;
 
 	displayedColumns: string[] = ['operationNumber', 'saleDate', 'total', 'quantity', 'status'];
 	dataSource = new MatTableDataSource<IResponseSalev2>();

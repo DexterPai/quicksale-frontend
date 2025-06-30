@@ -17,13 +17,6 @@
 		<h4>Selecciona tu categoría favorita</h4>
 	</div>
 	<div class="cards">
-		<!--
-				<app-card-event
-					*ngFor="let concerts of listConcerts"
-					[event]="concerts"
-					(clickCard)="clickCard($event)"
-				></app-card-event>
-				-->
 		<app-card-event
 			*ngFor="let concerts of listEvents"
 			[event]="concerts"

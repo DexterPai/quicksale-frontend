@@ -35,24 +35,6 @@
 								<mat-error *ngIf="commentsField.hasError('required')">Este campo es requerido</mat-error>
 							</mat-form-field>
 
-							<!--
-							<mat-form-field appearance="outline">
-								<mat-label>Fecha</mat-label>
-								<input matInput [matDatepicker]="picker" formControlName="date" />
-								<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-								<mat-datepicker #picker></mat-datepicker>
-								<mat-error *ngIf="dateField.hasError('required')">Este campo es requerido</mat-error>
-							</mat-form-field>
-							-->
-
-							<!--
-							<mat-form-field appearance="outline">
-								<mat-label>Hora</mat-label>
-								<input matInput type="time" formControlName="hour" />
-								<mat-error *ngIf="hourField.hasError('required')">Este campo es requerido</mat-error>
-							</mat-form-field>
-							-->
-
 							<mat-form-field appearance="outline">
 								<mat-label>Evento</mat-label>
 								<mat-select formControlName="event">
@@ -130,30 +112,6 @@
 								<td mat-cell *matCellDef="let element">{{ element.comments }}</td>
 							</ng-container>
 
-							<!--
-							<ng-container matColumnDef="dateEvent">
-								<th mat-header-cell *matHeaderCellDef>Fecha y hora</th>
-								<td mat-cell *matCellDef="let element">{{ element.dateEvent | date : 'dd/MM/yyyy' }}</td>
-							</ng-container>
-
-							<ng-container matColumnDef="ticketsQuantity">
-								<th mat-header-cell *matHeaderCellDef>Cant. Entradas</th>
-								<td mat-cell *matCellDef="let element">{{ element.ticketsQuantity }}</td>
-							</ng-container>
-
-							<ng-container matColumnDef="price">
-								<th mat-header-cell *matHeaderCellDef>Precio</th>
-								<td mat-cell *matCellDef="let element">
-									{{ element.unitPrice | currency : 'PEN' : 'symbol' : '.2-2' }}
-								</td>
-							</ng-container>
-
-							<ng-container matColumnDef="genre">
-								<th mat-header-cell *matHeaderCellDef>Categoría</th>
-								<td mat-cell *matCellDef="let element">{{ element.category.description }}</td>
-							</ng-container>
-							-->
-
 							<ng-container matColumnDef="status">
 								<th mat-header-cell *matHeaderCellDef>Estado</th>
 								<td mat-cell *matCellDef="let element">{{ element.status }}</td>
@@ -175,12 +133,6 @@
 											<mat-icon color="primary">edit</mat-icon>
 											<span>Editar</span>
 										</button>
-										<!--
-										<button mat-menu-item (click)="clickFinalize(element.id)">
-											<mat-icon color="primary">free_cancellation</mat-icon>
-											<span>Finalizar</span>
-										</button>
-										-->
 									</mat-menu>
 								</td>
 							</ng-container>
@@ -193,7 +145,6 @@
 								<td class="mat-cell" colspan="4">No existe información para: "{{ input.value }}"</td>
 							</tr>
 						</table>
-						<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons> </mat-paginator> -->
 						<mat-paginator
 							#paginator
 							[pageSizeOptions]="pageSizeOptions"

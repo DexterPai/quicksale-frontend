@@ -24,13 +24,11 @@ import { FormBuilder } from '@angular/forms';
 export class HomePageComponent implements OnInit {
 	@ViewChild('cardDummy') cardDummy?: CardEventComponent;
 
-	//private _homeApiService = inject(HomeApiService);
 	private _eventApiService = inject(EventApiService);
 	private _categoryApiService = inject(CategoryApiService);
 	private _router = inject(Router);
 	private _formBuilder = inject(FormBuilder);
 	private _dataUserService =  inject(DataUserService);
-	//private _demoCorsService = inject(DemoCorsService);
 
 	listConcerts: ICardEvent[] = [];
 	listGenres: IHomeGenres[] = [];

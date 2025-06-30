@@ -9,7 +9,6 @@ import { LocalStorageService } from './storage/local-storage.service';
 export class DataUserService {
 	private _sessionStorageService = inject(SessionStorageService);
 	private _localStorageService = inject(LocalStorageService);
-	// constructor(private _sessionStorageService: SessionStorageService) {}
 
 	getToken(): string | undefined {
 		const tokenUser = this._sessionStorageService.getItem<IDataUser>(KEYS_WEB_STORAGE.DATA_USER);
@@ -56,10 +55,6 @@ export class DataUserService {
 			const dataUser = this._sessionStorageService.getItem<IDataUser>(KEYS_WEB_STORAGE.DATA_USER);
 
 			if (dataUser !== null) {
-				//&& dataUser.token
-				//const decoded = jwtDecode<JwtPayload>(dataUser.token);
-				//const tokenExpired = Date.now() > decoded.exp! * 1000;
-
 				return false;
 			} else return true;
 		} catch (error) {

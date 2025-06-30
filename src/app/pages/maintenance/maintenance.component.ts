@@ -37,19 +37,11 @@ export class MaintenanceComponent {
 			active: false,
 			path: PATH_MAINTENANCE_PAGES.categorys.withSlash
 		},
-		/*
-		{
-			title: 'GENEROS',
-			nameImage: 'genres.png',
-			active: false,
-			path: PATH_MAINTENANCE_PAGES.genres.withSlash
-		},
-		*/
-		{
-			title: 'REPORTES',
-			nameImage: 'statistics.png',
-			active: false,
-			path: PATH_MAINTENANCE_PAGES.reports.withSlash
-		}
+		// {
+		// 	title: 'REPORTES',
+		// 	nameImage: 'statistics.png',
+		// 	active: false,
+		// 	path: PATH_MAINTENANCE_PAGES.reports.withSlash
+		// }
 	];
 }

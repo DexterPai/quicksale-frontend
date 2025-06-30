@@ -26,22 +26,6 @@ export class ApiInterceptor implements HttpInterceptor {
 	constructor(private _dataUser: DataUserService, private _router: Router) {}
 
 	intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-		/*
-		if (this.isExempted(request.url)) {
-			return next.handle(request);
-		}
-
-		if (this._dataUser.isExpiredToken()) {
-			this._router.navigateByUrl('/');
-			return EMPTY;
-		}
-
-		const token = this._dataUser.getToken();
-		//console.log('---------EL INTERCEPTOR ESTA INTERCEPTANDO PAPI---------');
-		const requestclone = request.clone({
-			headers: request.headers.set('Authorization', `Bearer ${token}`)
-		});
-		*/
 		return next.handle(request);
 	}
 

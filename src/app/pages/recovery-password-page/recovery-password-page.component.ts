@@ -50,13 +50,6 @@ export default class RecoveryPasswordPageComponent {
 	private _validResponseAndRedirect(response: IResponse<string>, email: string): void {
 		if (response.success) {
 			const url = PATHS_AUTH_PAGES.restorePasswordPage.withSlash + '/' + email;
-
-			/**
-			 * Enviamos datos a traves de las rutas usando queryParams,
-			 * al hacerlo de esta manera los datos enviados se mostraran en la url
-			 */
-			//void this._router.navigate([url], { queryParams: { token: response.data } });
-
 			/**
 			 * Enviamos datos a traves de las rutas gracias a la opción "state",
 			 * al hacerlo de esta manera evitamos mostrar la información en la url, pero recuerda que si actualizas la pagina los datos se perderan

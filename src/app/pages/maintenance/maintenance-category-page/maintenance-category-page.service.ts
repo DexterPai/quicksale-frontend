@@ -9,7 +9,6 @@ import { concatMap, EMPTY, map, Observable, tap } from 'rxjs';
 import { IResponse, IResponsev2 } from '../../../commons/services/api/api-models-base.interface';
 import { CRUD_METHOD, STATUS_CRUD } from '../../../commons/utils/enums';
 import { CategoryApiService } from 'src/app/commons/services/api/category/category-api.service';
-// eslint-disable-next-line prettier/prettier
 import {
 	IRequestCreateUpdateCategory,
 	IResponseCategory
