@@ -19,11 +19,11 @@ export class MyAccountComponent {
 			active: true,
 			path: PATH_MY_ACCOUNT_PAGES.buy.withSlash
 		},
-		{
-			title: 'CAMBIAR CONTRASEÑA',
-			nameImage: 'change-password.png',
-			active: false,
-			path: PATH_MY_ACCOUNT_PAGES.changePassword.withSlash
-		}
+		// {
+		// 	title: 'CAMBIAR CONTRASEÑA',
+		// 	nameImage: 'change-password.png',
+		// 	active: false,
+		// 	path: PATH_MY_ACCOUNT_PAGES.changePassword.withSlash
+		// }
 	];
 }
